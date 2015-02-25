@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link href="css/bootstrap.min.css" rel="stylesheet">
+	<link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
+
+    <script type="text/javascript" src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="js\zeroclipboard\dist\ZeroClipboard.js"></script>
+
+	<style>
+	.jumbotron {
+		background: #fff;
+		margin-top: 50px;
+	}
+	#result {
+		margin: 20px;
+	}
+	</style>
+
+</head>
+<body>
+
+	<div class="container">
+		<div class="jumbotron text-center main-body">
+		<p id="text">An informal test of gullibility</p>
+		<button id="copy-button" class="btn btn-success btn-lg" data-clipboard-text="CuM Inside - Amateur sex video" title="button">Start</button>
+
+		</div>
+	</div>
+
+	<script>
+
+	var client = new ZeroClipboard(document.getElementById("copy-button"));
+
+	client.on("ready", function(readyEvent) {
+		client.on("aftercopy", function(event) {
+			//document.getElementById("copy-button")
+			event.target.style.display = "none";
+			document.getElementById("text").innerHTML="You failed. Now paste.";
+		});
+	});
+
+	</script>
+
+</body>
+</html>
